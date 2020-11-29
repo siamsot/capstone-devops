@@ -2,5 +2,5 @@
   community.aws.aws_eks_cluster:
     name: test
     version: 1.14
-    role_arn: my_eks_role
-  register: caller_facts
+    state: present
+    region: us-east-1
