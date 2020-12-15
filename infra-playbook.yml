@@ -1,12 +1,15 @@
-- name: Create an EKS cluster
-  shell: >
-    eksctl create cluster \
-    --name test \
-    --version 1.17 \
-    --region eu-west-2 \
-    --nodegroup-name test-linux-nodes \
-    --node-type t3a.small \
-    --nodes-min 1 \
-    --nodes-max 1 \
-    --managed
-  when: eks_check_output.stdout == "No clusters found"
+- name: Cluster creation
+  hosts: localhost
+
+  tasks:
+    - name: Create an EKS cluster
+      shell: >
+        eksctl create cluster \
+        --name test \
+        --version 1.17 \
+        --region eu-west-2 \
+        --nodegroup-name test-linux-nodes \
+        --node-type t3a.small \
+        --nodes-min 1 \
+        --nodes-max 1 \
+        --managed
