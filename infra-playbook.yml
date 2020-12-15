@@ -1,10 +1,10 @@
 - name: Create an EKS cluster
   shell: >
     eksctl create cluster \
-    --name {{ eksexample_clustername }} \
-    --version {{ eksexample_clusterversion }} \
-    --region {{ eksexample_region }} \
-    --nodegroup-name {{ eksexample_clustername }}-linux-nodes \
+    --name test \
+    --version 1.17 \
+    --region eu-west-2 \
+    --nodegroup-name test-linux-nodes \
     --node-type t3a.small \
     --nodes-min 1 \
     --nodes-max 1 \
