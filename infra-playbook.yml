@@ -7,7 +7,7 @@
     shell: eksctl create cluster \
       --name test \
       --version 1.17 \
-      --region eu-west-2 \
+      --region eu-west-1 \
       --nodegroup-name test-linux-nodes \
       --node-type t3a.small \
       --nodes-min 1 \
