@@ -3,7 +3,7 @@
 
   tasks:
     - name: Create an EKS cluster
-      shell: >
+      command: >
         eksctl create cluster \
         --name test \
         --version 1.17 \
