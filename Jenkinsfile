@@ -2,8 +2,9 @@ pipeline {
   environment {
     registry = "siamsot/capstone"
     registryCredential = "dockerhub_id"
+    dockerImage = ''
   }
-  agent any
+  agent { dockerfile true }
   stages {
     stage('Linting Dockerfile') {
       steps {
@@ -12,8 +13,10 @@ pipeline {
     }
     stage('Build and Push Docker Image') {
       steps {
-        withCredentials(dockerhub_id){
-          sh 'ansible-playbook ./container-build.yml'
+        script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          docker.withRegistry( '', registryCredential ) {
+                        dockerImage.push()
               }
           }
       }
