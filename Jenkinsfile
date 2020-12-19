@@ -20,6 +20,7 @@ pipeline {
               }
           }
       }
+      }
     stage('Create Cluster'){
         steps {
           withAWS(credentials: 'full-owner') {
@@ -29,4 +30,3 @@ pipeline {
        }
   }
   }
-}
