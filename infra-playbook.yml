@@ -13,6 +13,7 @@
       --nodes-min 1 \
       --nodes-max 2 \
       --managed
-
+    when: "existing_clusters.stdout.find('No clusters found') != -1"
   - name: Update kubeconfig
     command: aws eks --region eu-west-2 update-kubeconfig --name siamsot-capstone
+    when: "existing_clusters.stdout.find('No clusters found') != -1"
