@@ -2,6 +2,9 @@
   connection: local
 
   tasks:
+  - name: Get existing cluster
+    command: eksctl get clusters
+    register: existing_clusters
 
   - name: Create an EKS cluster
     shell: eksctl create cluster \
