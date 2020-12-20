@@ -4,7 +4,7 @@ pipeline {
     registryCredential = "dockerhub_id"
     dockerImage = ''
   }
-  agent { dockerfile true }
+  agent any
   stages {
     stage('Linting Dockerfile') {
       steps {
