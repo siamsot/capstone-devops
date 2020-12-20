@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: devops-capstone-deployment
@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
         - name: devops-capstone
-          image: siamsot/capstone:53
+          image: siamsot/capstone:latest
           ports:
             - containerPort: 80
