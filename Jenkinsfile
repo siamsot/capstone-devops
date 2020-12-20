@@ -21,13 +21,13 @@ pipeline {
           }
       }
       }
-    stage('Create Cluster'){
+    /* stage('Create Cluster'){
         steps {
           withAWS(credentials: 'full-owner') {
             sh 'ansible-playbook ./infra-playbook.yml'
                }
            }
-       }
+       } */
     stage('Continuous Deployment to Cluster'){
       steps {
         withAWS(credentials: 'full-owner') {
