@@ -30,7 +30,9 @@ pipeline {
        }
     stage('Continuous Deployment to Cluster'){
       steps {
-        sh ' kubectl apply -f continuous_deployment.yml'
+        withAWS(credentials: 'full-owner') {
+          sh ' kubectl apply -f continuous_deployment.yml'
+          }
       }
     }
   }
