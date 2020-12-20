@@ -30,7 +30,7 @@ pipeline {
        }
     stage('Continuous Deployment to Cluster'){
       steps {
-        sh 'sudo kubectl apply -f continuous_deployment.yml
+        sh 'sudo kubectl apply -f continuous_deployment.yml'
       }
     }
   }
