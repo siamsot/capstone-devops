@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
         - name: devops-capstone
-          image: siamsot/capstone:latest
+          image: siamsot/capstone:56
           ports:
             - containerPort: 80
