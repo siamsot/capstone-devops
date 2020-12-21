@@ -31,6 +31,7 @@ pipeline {
     stage('Continuous Deployment to Cluster'){
       steps {
         withAWS(credentials: 'full-owner') {
+          sh ' kubectl apply -f load-balancer.yml'
           sh ' kubectl apply -f continuous_deployment.yml'
           }
       }
