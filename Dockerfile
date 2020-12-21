@@ -1,4 +1,4 @@
 # hadolint ignore=DL3006
-FROM redis
+FOM redis
 
 EXPOSE 80
